@@ -21,10 +21,10 @@ export default function JobDetailsScreen() {
 
   useEffect(() => {
     const loadJob = async () => {
-      const jobs = await AsyncStorage.getItem('bookmarks'); // For offline fallback
+      const jobs = await AsyncStorage.getItem('bookmarks'); 
       const jobList = jobs ? JSON.parse(jobs) : [];
     const foundJob = jobList.find((j: Job) => j.id === id);
-      setJob(foundJob); // Note: This assumes job is in bookmarks; you might need API call here
+      setJob(foundJob); 
     };
     loadJob();
   }, [id]);
